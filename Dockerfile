@@ -7,10 +7,6 @@ EXPOSE 11434
 ENV OLLAMA_HOST=0.0.0.0:11434
 ENV OLLAMA_ORIGINS=*
 
-# Copy startup script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-
-# Override entrypoint to use our startup script
-ENTRYPOINT []
-CMD ["/bin/sh", "/start.sh"]
+# Use the default Ollama serve command
+# Model will be downloaded automatically by Streamlit app when first requested
+CMD ["serve"]
