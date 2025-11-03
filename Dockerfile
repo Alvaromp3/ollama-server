@@ -11,6 +11,6 @@ ENV OLLAMA_ORIGINS=*
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Start Ollama server and download model
-# Use shell form to properly execute the script
+# Override entrypoint to use our startup script
+ENTRYPOINT []
 CMD ["/bin/sh", "/start.sh"]
