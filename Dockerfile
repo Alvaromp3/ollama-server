@@ -12,4 +12,5 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 # Start Ollama server and download model
-CMD ["/start.sh"]
+# Use shell form to properly execute the script
+CMD ["/bin/sh", "/start.sh"]
